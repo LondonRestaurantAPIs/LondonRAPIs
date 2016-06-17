@@ -11,8 +11,8 @@ mapTypeId: google.maps.MapTypeId.ROAD
 map = new google.maps.Map(document.getElementById('map'),
 mapOptions);
 
-latVal = 51.5080;
-lngVal = -0.1;
+//latVal = 51.5080;
+//lngVal = -0.1;
 getResponse();
 //initMap(latVal,lngVal);
 
@@ -53,7 +53,8 @@ return{
    for (i = 0; i < filteredArray.length; i++) {
      marker = new google.maps.Marker({
        position: new google.maps.LatLng(filteredArray[i].lat, filteredArray[i].lng),
-       map: map
+       map: map,
+       title: filteredArray[i].name
      });
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
